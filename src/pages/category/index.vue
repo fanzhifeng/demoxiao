@@ -1,6 +1,6 @@
 <template>
   <div>
-    分类fdg
+    分类页面
   </div>
 </template>
 
