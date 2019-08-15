@@ -23,6 +23,7 @@
     "build": "node build/build.js wx"
   },
   "dependencies": {
+    "dns": "^0.2.2",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "mpvue": "^2.0.0",
