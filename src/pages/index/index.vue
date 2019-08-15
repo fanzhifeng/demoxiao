@@ -1,11 +1,6 @@
 <template>
   <div>
-    <!-- 头部 -->
-    <div class="header">
-      <!-- 搜索图标 -->
-      <icon type="search" size="16"></icon>
-      <input type="text" placeholder="搜索">
-    </div>
+    <!-- <myheader></myheader> -->
     <!-- 轮播图 -->
     <swiper indicator-dots autoplay circular>
         <block v-for="(item,index) in swiperArr" :key="index">
@@ -43,6 +38,8 @@
 // 导入模块
 import  tools from "../../utils/index";
 
+// import myheader from "../../components/header"
+
 export default {
   data() { 
     return {
@@ -72,93 +69,23 @@ export default {
         this.floorList=data;
         wx.hideLoading()
       })
-    },
-    // getHomeSwiper(){
-    //   wx.request({
-    //     url: 'https://www.zhengzhicheng.cn/api/public/v1/home/swiperdata', //开发者服务器接口地址",
-    //     data: {}, //请求的参数",
-    //     method: 'GET',
-    //     dataType: 'json', //如果设为json，会尝试对返回的数据做一次 JSON.parse
-    //     success: res => {
-    //       // console.log("请求回来的数据");
-    //       // console.log(res);
-    //       this.swiperArr=res.data.message
-    //     },
-    //     fail: () => {},
-    //     complete: () => {}
-    //   });
-    // },
-
-    // // 请求分类数据
-    // getHomeCategories(){
-    //   wx.request({
-    //     url: 'https://www.zhengzhicheng.cn/api/public/v1/home/catitems', //开发者服务器接口地址",
-    //     data: {}, //请求的参数",
-    //     method: 'GET',
-    //     dataType: 'json', //如果设为json，会尝试对返回的数据做一次 JSON.parse
-    //     success: res => {
-    //       // console.log("请求回来的分类数据");
-    //       // console.log(res);
-    //       this.categoryArr=res.data.message
-    //     },
-    //     fail: () => {},
-    //     complete: () => {}
-    //   });
-    // },
-    // // 请求楼层数据
-    // getHomefloordata(){
-    //   wx.request({
-    //     url: 'https://www.zhengzhicheng.cn/api/public/v1/home/floordata', //开发者服务器接口地址",
-    //     data: {}, //请求的参数",
-    //     method: 'GET',
-    //     dataType: 'json', //如果设为json，会尝试对返回的数据做一次 JSON.parse
-    //     success: res => {
-    //       // console.log("请求回来的楼层数据");
-    //       // console.log(res);
-    //       this.floorList=res.data.message
-    //     },
-    //     fail: () => {},
-    //     complete: () => {}
-    //   });
-    // }
+    }
+    
   },
 
   created(){
-    // this.getHomeSwiper();
-
-    //     // 请求 分类数据
-    //     this.getHomeCategories();
-
-    //     // 请求 楼层数据
-    //     this.getHomefloordata();
+    
     this.getData();
-  }
+  },
+  // 挂载组件
+  // components:{
+  //   myheader
+  // }
 }
 </script>
 
 <style lang="less" scoped>
-  .header{
-    width: 100%;
-    background-color: #ff2d4a;
-    padding: 20rpx 16rpx;
-    box-sizing: border-box;
-    position: relative;
-    icon{
-      position: absolute;
-      top: 32rpx;
-      left: 50%;
-      transform: translateX(-200%);
-    }
-    input{
-      width: 100%;
-      height: 60rpx;
-      background-color: #fff;
-      font-size: 24rpx;
-      color: #bbb;
-      text-align: center;
-      border-radius: 10rpx;
-    }
-  }
+  
   swiper{
     height: 340rpx;
     width: 100%;
